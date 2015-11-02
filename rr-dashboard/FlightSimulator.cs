@@ -42,16 +42,16 @@ namespace rr_dashboard
             var pbi = new PowerBiAuthentication("007fb3ab-bf10-437b-9bea-1825f1086d00");
             var dsClient = new DatasetsClient(pbi);
             var groupClient = new GroupClient(pbi);
-     
-           
+
+            var group = groupClient.Get().Result.value.First(t=>t.name== "ElastacoudPowerByTheHour");
 
             //BufferedInsert<FlightInfoTableEntry>(dsClient, powerByTheHourDatasetId, flightTable);
             //BufferedInsert<PositionTableEntry>(dsClient, powerByTheHourDatasetId, positionTable);
             //BufferedInsert<SensorTableEntry>(dsClient, powerByTheHourDatasetId, sensorTable);
             try
             {
-                string powerByTheHourDatasetId = CreateBIDataset(dsClient);
-                BufferedInsert<FlattenedFlightInfoTableEntry>(dsClient, powerByTheHourDatasetId,
+                string powerByTheHourDatasetId = CreateBIDataset(dsClient, group);
+                BufferedInsert<FlattenedFlightInfoTableEntry>(dsClient, group, powerByTheHourDatasetId,
                     flattenedFlightDictionary);
             }
             catch (Exception e)
@@ -61,13 +61,13 @@ namespace rr_dashboard
             Console.WriteLine();
         }
 
-        private static string CreateBIDataset(DatasetsClient client)
+        private static string CreateBIDataset(DatasetsClient client, Group g)
         {
-            var datasets = client.List().Result;
+            var datasets = client.List(g.id).Result;
             
             if (datasets.value.All(t => t.name != PowerByTheHour))
             {
-                var result = client.Create(/*"24ad4bac-5e20-4ca0-8a55-126e6227e2a6",*/ PowerByTheHour, false, /*typeof(Classes.FlightInfoTableEntry), typeof(Classes.PositionTableEntry), typeof(Classes.SensorTableEntry),*/ typeof(Classes.FlattenedFlightInfoTableEntry)).Result;
+                var result = client.Create(g.id, PowerByTheHour, false, /*typeof(Classes.FlightInfoTableEntry), typeof(Classes.PositionTableEntry), typeof(Classes.SensorTableEntry),*/ typeof(Classes.FlattenedFlightInfoTableEntry)).Result;
                 return result.id;
             }
             else
@@ -100,7 +100,7 @@ namespace rr_dashboard
             }
         }
 
-        private static void BufferedInsert<T>(DatasetsClient client, String datasetId, TableRows<T> entries)
+        private static void BufferedInsert<T>(DatasetsClient client, Group g, String datasetId, TableRows<T> entries)
         {
  
             var length = entries.rows.Count;
@@ -112,7 +112,7 @@ namespace rr_dashboard
                 TableRows<T> bufferTableEntries = new TableRows<T>();
                 var numremaining = length - count * Buffer;
                 bufferTableEntries.rows.AddRange(entries.rows.Skip(count).Take(numremaining > Buffer ? Buffer : numremaining));
-                client.AddRows(datasetId, typeof(T).Name, bufferTableEntries).Wait();
+                client.AddRows(g.id, datasetId, typeof(T).Name, bufferTableEntries).Wait();
                 count++;
             }
         }

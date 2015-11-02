@@ -26,3 +26,17 @@ C:\Users\david\Work\FlightsRR\rr-dashboard\rr-dashboard\bin\Debug\RestSharp.dll
 C:\Users\david\Work\FlightsRR\rr-dashboard\rr-dashboard\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
 C:\Users\david\Work\FlightsRR\rr-dashboard\rr-dashboard\bin\Debug\Newtonsoft.Json.xml
 C:\Users\david\Work\FlightsRR\rr-dashboard\rr-dashboard\bin\Debug\RestSharp.xml
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\rr-dashboard.exe.config
+C:\src\powerbi\bisharp-rr\rr-dashboard\obj\Debug\rr-dashboard.exe
+C:\src\powerbi\bisharp-rr\rr-dashboard\obj\Debug\rr-dashboard.pdb
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\rr-dashboard.exe
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\rr-dashboard.pdb
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\BISharp.dll
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\Newtonsoft.Json.dll
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\RestSharp.dll
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\Newtonsoft.Json.xml
+C:\src\powerbi\bisharp-rr\rr-dashboard\bin\Debug\RestSharp.xml
+C:\src\powerbi\bisharp-rr\rr-dashboard\obj\Debug\rr-dashboard.csprojResolveAssemblyReference.cache
