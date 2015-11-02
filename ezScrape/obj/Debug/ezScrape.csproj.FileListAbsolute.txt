@@ -1,0 +1,6 @@
+c:\src\rr-dashboard\ezScrape\bin\Debug\ezScrape.exe.config
+c:\src\rr-dashboard\ezScrape\bin\Debug\ezScrape.exe
+c:\src\rr-dashboard\ezScrape\bin\Debug\ezScrape.pdb
+c:\src\rr-dashboard\ezScrape\obj\Debug\ezScrape.csprojResolveAssemblyReference.cache
+c:\src\rr-dashboard\ezScrape\obj\Debug\ezScrape.exe
+c:\src\rr-dashboard\ezScrape\obj\Debug\ezScrape.pdb
